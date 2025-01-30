@@ -5,4 +5,5 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Main::kraj');
+$routes->get('kraj', 'Main::kraj');
