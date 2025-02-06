@@ -1,5 +1,13 @@
 <?php $navbar = ['class' => 'nav-link']; ?>
 <?php $navbarob = ['class' => 'navbar-brand']; ?>
+<?php 
+    $navlink = array(
+        'class' => 'nav-link'
+    );
+    
+
+
+?>
 
 <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
@@ -10,7 +18,7 @@
           <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav me-auto">
               <?php foreach ($okresCely as $navitem):?>
-                <li class="nav-link"><?= anchor("kraj/".$navitem->kraj, $navitem->nazev); ?></li>
+                <li class="nav-item"><?= anchor("kraj/".$navitem->kod, $navitem->nazev, $navlink); ?></li>
                 <h1>&nbsp;</h1>
               <?php endforeach; ?>
             </ul>

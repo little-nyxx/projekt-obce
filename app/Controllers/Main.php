@@ -31,7 +31,7 @@ class Main extends BaseController
 
     public function kraj()
     {
-        $okresCely = $this->okres->join('kraj','kraj.kod = okres.kraj','inner')->where('kraj.nazev', 'Zlínský kraj')->findAll();
+        $okresCely = $this->okres->select('okres.nazev, okres.kod')->join('kraj','kraj.kod = okres.kraj','inner')->where('kraj.nazev', 'Zlínský kraj')->findAll();
         $this->data["okresCely"] = $okresCely;
         echo view('kraj', $this->data);
     }
