@@ -7,3 +7,4 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Main::kraj');
 $routes->get('kraj', 'Main::kraj');
+$routes->get('kraj/(:num)', 'Main::okres/$1');
