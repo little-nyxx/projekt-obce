@@ -13,11 +13,16 @@ class Main extends BaseController
 
 {
     var $kraj;
+    var $data;
+    var $okres;
+    var $okresCely;
+    
 
     public function __construct()
     {
         $this->kraj = new Kraj();
-        $data["kraj"] = $this->kraj->findAll();
+        $this->okres = new Okres();
+        $this->data["kraj"] = $this->kraj->findAll();
     }
     public function index()
     {
@@ -26,7 +31,8 @@ class Main extends BaseController
 
     public function kraj()
     {
-
-        echo view('kraj');
+        $okresCely = $this->okres->join('kraj','kraj.kod = okres.kraj','inner')->where('kraj.nazev', 'Zlínský kraj')->findAll();
+        $this->data["okresCely"] = $okresCely;
+        echo view('kraj', $this->data);
     }
 }

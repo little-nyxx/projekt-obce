@@ -9,13 +9,8 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav me-auto">
-              <?php
-                $nav = array(
-                    'class' => 'nav-link'
-                );
-              ?>
-              <?php foreach ($kraj as $navitem):?>
-                <link><?= anchor("kraj/".$navitem->kod, $navitem->nazev, ['class' => 'btn btn-primary']); ?></link>
+              <?php foreach ($okresCely as $navitem):?>
+                <li class="nav-link"><?= anchor("kraj/".$navitem->kraj, $navitem->nazev); ?></li>
                 <h1>&nbsp;</h1>
               <?php endforeach; ?>
             </ul>
