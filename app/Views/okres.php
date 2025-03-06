@@ -3,17 +3,17 @@
 <?= $this->section('content'); ?>
 <h1> Obce v okrese <?= $okres->nazev ?></h1>
 <?php
-echo anchor('okres/'.$okres->kod.'/perpage/10', 10, ['class' => 'btn btn-primary']);
-echo anchor('okres/'.$okres->kod.'/perpage/20', 20, ['class' => 'btn btn-primary']);
-echo anchor('okres/'.$okres->kod.'/perpage/50', 50, ['class' => 'btn btn-primary']);
-echo anchor('okres/'.$okres->kod.'/perpage/100', 100, ['class' => 'btn btn-primary']);
+echo anchor('kraj/'.$okres->kod.'/perpage/10', 10, ['class' => 'btn btn-primary']);
+echo anchor('kraj/'.$okres->kod.'/perpage/20', 20, ['class' => 'btn btn-primary']);
+echo anchor('kraj/'.$okres->kod.'/perpage/50', 50, ['class' => 'btn btn-primary']);
+echo anchor('kraj/'.$okres->kod.'/perpage/100', 100, ['class' => 'btn btn-primary']);
 ?>
 
 <?php
 
     $table = new \CodeIgniter\View\Table();
     $table->setHeading('Pořadí', 'Název', 'Počet adres');
-    $poradi = $pager->getCurrentPage() * $strankovani - $strankovani-1;
+    $poradi = $pager->getCurrentPage() * $strankovani - $strankovani+1;
 
     foreach ($adresniMista as $row) {
         $table->addRow($poradi++, $row->nazev, $row->pocetMist);

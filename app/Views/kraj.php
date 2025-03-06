@@ -9,7 +9,7 @@
     $poradi = 1;
 
     foreach ($okres as $row) {
-        $table->addRow($poradi++, anchor("kraj/".$row->kod, $row->nazev));
+        $table->addRow($poradi++, anchor("kraj/".$row->kod."/perpage/20", $row->nazev));
     }
 
     $template = array(

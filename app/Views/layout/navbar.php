@@ -19,7 +19,7 @@
             <ul class="navbar-nav me-auto">
               <?php foreach ($okresCely as $navitem):?>
                 <li class="nav-item"><?= anchor("kraj/".$navitem->kod.'/perpage/20', $navitem->nazev, $navlink); ?></li>
-                <h1>&nbsp;</h1>
+                
               <?php endforeach; ?>
             </ul>
           </div>

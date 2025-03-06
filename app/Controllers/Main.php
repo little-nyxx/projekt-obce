@@ -53,7 +53,7 @@ class Main extends BaseController
 
         
         $adresniMista = $this->obec->select('obec.nazev, Count(*) as pocetMist')->where('okres', $kod)->join('cast_obce', 'cast_obce.obec = obec.kod', 'inner')
-        ->join('ulice', 'ulice.cast_obce = cast_obce.kod', 'inner')->join('adresni_misto', 'adresni_misto.ulice = ulice.kod', 'inner')->where('obec.okres', $kod)->groupBy('obec.kod')->orderBy('pocetMist', "desc")->paginate(20);
+        ->join('ulice', 'ulice.cast_obce = cast_obce.kod', 'inner')->join('adresni_misto', 'adresni_misto.ulice = ulice.kod', 'inner')->where('obec.okres', $kod)->groupBy('obec.kod')->orderBy('pocetMist', "desc")->paginate($strankovani);
         $this->data['adresniMista'] = $adresniMista;
         $this->data['pager'] = $this->obec->pager;
         $okres = $this->okres->find($kod);
